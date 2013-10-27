@@ -1,0 +1,10 @@
+{>layout/}
+{+content}
+<p class="text-center" style="align: center">
+ Hi {name}, this is being rendered using {template}. <br />
+ <form method="GET" action = "/tweet" >
+ 	<input type="text" placeholder="Type something to tweet..." id="twtText" name="twtText" style="margin-top: 10px"/> &nbsp;
+ 	<button class="btn btn-info">Tweet</button>
+ </form>
+ </p>
+{/content}

@@ -6,15 +6,22 @@
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
+  , twt = require('./routes/tweet')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , dust = require('dustjs-linkedin')
+  , cons = require('consolidate')
+  , url = require('url')
+  , qs = require('querystring');
 
 var app = express();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
+app.set('view engine', 'dust');
+app.engine('dust', cons.dust);
+app.set('template_engine', 'dust');
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
@@ -30,6 +37,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
+//app.get('/tweet', twt.tweet);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

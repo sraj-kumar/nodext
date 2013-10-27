@@ -11,6 +11,8 @@
     "stylus": "*",
     "dustjs-linkedin": "*",
     "dustjs-helpers": "*",
-    "consolidate": "*"
+    "consolidate": "*",
+    "twit": "*",
+    "querystring": "*"
   }
 }

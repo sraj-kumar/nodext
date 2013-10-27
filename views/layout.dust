@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{title}</title>
+    <link rel='stylesheet' href='/stylesheets/bootstrap/bootstrap.min.css' />
+  </head>
+  <body>
+    <h3 class="text-center">{title}</h3>
+      {+content}
+        <p class="lead text-center"> Welcome! <br /></p>
+      {/content}
+  </body>
+</html>
